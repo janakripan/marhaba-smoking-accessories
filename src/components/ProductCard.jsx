@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import DirhamIcon from "@/custom icons/DirhamIcon";
 import { Eye, Droplet, Battery, Zap, Atom } from "lucide-react";
 
@@ -15,11 +15,11 @@ export default function ProductCard({ product }) {
     <div className="relative group flex flex-col items-center text-center p-0 min-h-[350px] md:min-h-[480px] bg-zinc-50/30 overflow-hidden cursor-pointer font-acme transition-colors border-r border-b border-transparent">
       {/* Product Image (Takes full width, baked-in graphics) */}
       <div className="relative w-full aspect-[4/5] z-10 bg-white">
-        <Image 
+        <img 
           src={product.imageUrl} 
           alt={`${product.brand} ${product.flavor}`}
-          fill
-          className="object-contain"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-contain"
           sizes="(max-width: 768px) 50vw, 25vw"
         />
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -34,7 +34,7 @@ export default function CookieConsent() {
       <div className="flex items-center text-[#333] text-[13px] md:text-[14px] leading-relaxed mb-4 md:mb-0 text-center md:text-left">
         <span>
           This website uses cookies to ensure you get the best experience on our website.{" "}
-          <Link href="/privacy-policy" className="font-bold underline ml-1 hover:text-black">
+          <Link to="/privacy-policy" className="font-bold underline ml-1 hover:text-black">
             Privacy Policy
           </Link>
         </span>

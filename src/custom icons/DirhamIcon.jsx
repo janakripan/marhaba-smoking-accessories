@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 
 export default function DirhamIcon({ className = "", size = 24 }) {
   return (

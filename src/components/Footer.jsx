@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 
 const FacebookIcon = ({ size = 24 }) => (
@@ -87,12 +87,12 @@ export default function Footer() {
         <div className="flex flex-col">
           <h3 className="font-krona text-[13px] uppercase tracking-wider mb-6">INFORMATION</h3>
           <ul className="flex flex-col space-y-3 font-acme text-[13px]">
-            <li><Link href="#" className="hover:text-white transition-colors">Search</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Delivery Information</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">KSA Shipping Policy</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Refund policy</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
+            <li><Link to="#" className="hover:text-white transition-colors">Search</Link></li>
+            <li><Link to="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
+            <li><Link to="#" className="hover:text-white transition-colors">Delivery Information</Link></li>
+            <li><Link to="#" className="hover:text-white transition-colors">KSA Shipping Policy</Link></li>
+            <li><Link to="#" className="hover:text-white transition-colors">Refund policy</Link></li>
+            <li><Link to="#" className="hover:text-white transition-colors">About Us</Link></li>
           </ul>
         </div>
 

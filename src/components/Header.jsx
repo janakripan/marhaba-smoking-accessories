@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+
+import { Link } from "react-router-dom";
 import { Truck, Phone, Mail, ChevronDown, ShoppingBag, X } from "lucide-react";
 
 export default function Header() {
@@ -66,23 +66,22 @@ export default function Header() {
         </button>
 
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0 mx-auto xl:mx-0">
-          <Image
+        <Link to="/" className="flex-shrink-0 mx-auto xl:mx-0">
+          <img
             src="/logo.jpg"
             alt="Marhaba Logo"
-            width={80}
-            height={80}
+            style={{ width: 80, height: 80 }}
             className="object-contain w-[60px] h-[60px] xl:w-[80px] xl:h-[80px]"
           />
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden xl:flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-black flex-1 px-8 font-acme font-normal text-[12px] leading-[20.4px] tracking-[2px] align-middle uppercase">
-          <Link href="/" className="hover:text-red-600 transition-colors">HOME</Link>
+          <Link to="/" className="hover:text-red-600 transition-colors">HOME</Link>
           <div className="flex items-center cursor-pointer hover:text-red-600 transition-colors">ARABISK <ChevronDown size={12} className="ml-1" /></div>
           <div className="flex items-center cursor-pointer hover:text-red-600 transition-colors">DISPOSABLES <ChevronDown size={12} className="ml-1" /></div>
           <div className="flex items-center cursor-pointer hover:text-red-600 transition-colors">NEW ARRIVALS <ChevronDown size={12} className="ml-1" /></div>
-          <Link href="/" className="hover:text-red-600 transition-colors">BEST SELLERS</Link>
+          <Link to="/" className="hover:text-red-600 transition-colors">BEST SELLERS</Link>
           <div className="flex items-center cursor-pointer hover:text-red-600 transition-colors">DISCOUNTS % <ChevronDown size={12} className="ml-1" /></div>
           <div className="flex items-center cursor-pointer hover:text-red-600 transition-colors">LESS NICOTINE <ChevronDown size={12} className="ml-1" /></div>
           <div className="flex items-center cursor-pointer hover:text-red-600 transition-colors">CHOOSE YOUR FLAVORS <ChevronDown size={12} className="ml-1" /></div>
@@ -105,11 +104,11 @@ export default function Header() {
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <nav className="xl:hidden flex flex-col bg-white border-t border-gray-100 font-acme text-[13px] uppercase tracking-[1px] absolute w-full z-40 shadow-lg top-[100%]">
-          <Link href="/" className="p-4 border-b border-gray-100 hover:bg-gray-50">HOME</Link>
+          <Link to="/" className="p-4 border-b border-gray-100 hover:bg-gray-50">HOME</Link>
           <div className="p-4 border-b border-gray-100 hover:bg-gray-50 flex justify-between">ARABISK <ChevronDown size={16} /></div>
           <div className="p-4 border-b border-gray-100 hover:bg-gray-50 flex justify-between">DISPOSABLES <ChevronDown size={16} /></div>
           <div className="p-4 border-b border-gray-100 hover:bg-gray-50 flex justify-between">NEW ARRIVALS <ChevronDown size={16} /></div>
-          <Link href="/" className="p-4 border-b border-gray-100 hover:bg-gray-50">BEST SELLERS</Link>
+          <Link to="/" className="p-4 border-b border-gray-100 hover:bg-gray-50">BEST SELLERS</Link>
           <div className="p-4 border-b border-gray-100 hover:bg-gray-50 flex justify-between">DISCOUNTS % <ChevronDown size={16} /></div>
           <div className="p-4 border-b border-gray-100 hover:bg-gray-50 flex justify-between">LESS NICOTINE <ChevronDown size={16} /></div>
           <div className="p-4 border-b border-gray-100 hover:bg-gray-50 flex justify-between">CHOOSE YOUR FLAVORS <ChevronDown size={16} /></div>

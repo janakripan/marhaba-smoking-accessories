@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -36,17 +36,16 @@ export default function HeroCarousel() {
   );
 
   return (
-    <div className="relative w-full h-[600px] md:h-[800px] overflow-hidden bg-gray-900 group">
-      <div className="overflow-hidden h-full" ref={emblaRef}>
-        <div className="flex h-full">
+    <div className="relative w-full overflow-hidden bg-gray-900 group">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
           {images.map((src, index) => (
-            <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
-              <Image
+            <div className="flex-[0_0_100%] min-w-0 relative" key={index}>
+              <img
                 src={src}
                 alt={`Hero Slide ${index + 1}`}
-                fill
-                priority={index === 0}
-                className="object-cover object-center"
+                loading={index === 0 ? "eager" : "lazy"}
+                className="w-full h-auto object-cover object-center"
               />
             </div>
           ))}

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback } from "react";
-import Image from "next/image";
+
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -54,11 +54,11 @@ export default function BrandCarousel() {
                 className="flex-[0_0_180px] md:flex-[0_0_220px] min-w-0 h-[120px] relative flex items-center justify-center p-6 bg-white border border-gray-100 shadow-sm"
               >
                 <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-300">
-                  <Image
+                  <img
                     src={brand.src}
                     alt={brand.name}
-                    fill
-                    className="object-contain"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-contain"
                     sizes="220px"
                   />
                 </div>
