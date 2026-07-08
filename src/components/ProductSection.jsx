@@ -10,13 +10,13 @@ export default function ProductSection({ data }) {
 
   return (
     <section className="w-full flex flex-col py-8">
-      <div className="w-full text-center mb-[40px]">
-        <h2 className="text-black font-krona font-normal text-[30px] leading-[36px] text-center align-middle tracking-normal">
+      <div className="w-full max-w-screen-xl mx-auto px-4 text-left mb-[40px]">
+        <h2 className="font-hanken font-[900] text-[36px] leading-[40px] text-[#0D0D0D]">
           {data.category}
         </h2>
       </div>
 
-      <div className="w-full max-w-[1600px] mx-auto px-4">
+      <div className="w-full max-w-screen-xl mx-auto px-4">
         {/* Grid with 30px gap */}
         <div
           className={`grid grid-cols-2 sm:grid-cols-3 ${gridClass} gap-[30px] border border-transparent`}

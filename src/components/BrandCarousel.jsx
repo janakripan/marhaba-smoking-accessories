@@ -6,15 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const brands = [
-  { name: "YUTO", src: "/POPULAR BRANDS LOGOS/yuto.png" },
-  { name: "MY SHISHA", src: "/POPULAR BRANDS LOGOS/my-shisha.png" },
-  { name: "PYNE POD", src: "/POPULAR BRANDS LOGOS/pine-pod.png" },
-  { name: "POD SALT", src: "/POPULAR BRANDS LOGOS/pod-salt.png" },
-  { name: "VEIIK", src: "/POPULAR BRANDS LOGOS/veiik.png" },
-  { name: "HQD", src: "/POPULAR BRANDS LOGOS/hqd.png" },
-  { name: "IGET", src: "/POPULAR BRANDS LOGOS/iget.png" },
-];
+import { POPULAR_BRANDS as brands } from "@/constants";
 
 export default function BrandCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -38,7 +30,7 @@ export default function BrandCarousel() {
   return (
     <section className="w-full flex flex-col py-12 bg-zinc-50/50 group relative">
       <div className="w-full text-center mb-[40px]">
-        <h2 className="text-black font-krona font-normal text-[24px] md:text-[30px] leading-[36px] tracking-normal uppercase">
+        <h2 className="font-hanken uppercase font-normal text-[30px] leading-[36px] text-black text-center align-middle">
           POPULAR BRANDS
         </h2>
       </div>

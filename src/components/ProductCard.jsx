@@ -1,7 +1,6 @@
 import React from "react";
-
 import DirhamIcon from "@/custom icons/DirhamIcon";
-import { Eye, Droplet, Battery, Zap, Atom } from "lucide-react";
+import { Eye, Droplet, Trash2, Atom, Leaf } from "lucide-react";
 
 export default function ProductCard({ product }) {
   // Extract puffs from category name (e.g., "ARABISK AR 1600 PUFFS 50MG" -> "1600")
@@ -11,62 +10,91 @@ export default function ProductCard({ product }) {
   // The background watermark text
   const watermark = puffs || product.brand;
 
+  const nicotine = product.specs?.nicotine || "50 MG";
+  const liquid = product.specs?.liquid || "6 ML";
+  const battery = product.specs?.battery || "500 MAH";
+
+  const renderSpec = (text) => {
+    const match = text.match(/([\d.]+)\s*([A-Za-z]+)/);
+    if (match) {
+      return (
+        <>
+          {match[1]}<sup className="text-[7px] ml-[1px]">{match[2]}</sup>
+        </>
+      );
+    }
+    return text;
+  };
+
   return (
-    <div className="relative group flex flex-col items-center text-center p-0 min-h-[350px] md:min-h-[480px] bg-zinc-50/30 overflow-hidden cursor-pointer font-acme transition-colors border-r border-b border-transparent">
-      {/* Product Image (Takes full width, baked-in graphics) */}
-      <div className="relative w-full aspect-[4/5] z-10 bg-white">
+    <div className="relative group flex flex-col items-center text-center p-0 min-h-[480px] bg-white overflow-hidden cursor-pointer transition-all duration-300 shadow-none hover:shadow-lg border border-transparent">
+      {/* Product Image Area */}
+      <div className="relative w-full aspect-[4/5] z-10 bg-white flex items-center justify-center p-6">
+        
+        
+        {/* Top Left Puffs & Flavor */}
+        <div className="absolute top-4 left-4 flex flex-col items-start z-20">
+          <div className="flex items-end text-black font-bold text-[13px] leading-none">
+            {puffs} 
+            <span className="ml-0.5 text-[7px] uppercase font-bold leading-none mb-[1px]">
+              PUFFS
+            </span>
+          </div>
+          <div className="text-black text-[9px] font-medium capitalize mt-1 opacity-80">
+            {product.flavor.toLowerCase()}
+          </div>
+        </div>
+
+       
+        {/* Actual Product Image */}
         <img 
           src={product.imageUrl} 
           alt={`${product.brand} ${product.flavor}`}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-contain"
+          className="relative z-10 w-full h-full object-contain scale-[1.15] transition-transform duration-500 group-hover:scale-[1.2]"
           sizes="(max-width: 768px) 50vw, 25vw"
         />
       </div>
 
       {/* Bottom Info - Title stays, only price fades out on hover */}
       <div className="w-full flex flex-col items-center z-10">
-        <div className="text-[#3B3B3B] font-acme font-normal text-[11px] leading-[18.7px] tracking-normal text-center align-middle mb-1">
-          {product.brand}
+        {/* Brand */}
+        <div className="font-aboreto uppercase tracking-widest text-center mb-1.5 font-normal text-[12px] leading-[18.7px] text-[#3B3B3B]">
+          {product.brand || "MARHABA"}
         </div>
-        <div className="font-normal text-[13px] uppercase line-clamp-2 leading-[22.1px] tracking-wide min-h-[30px]">
+        
+        {/* Title */}
+        <div className="font-hanken uppercase flex items-start justify-center text-center mb-3 min-h-[36px] font-normal text-[13px] leading-[22.1px] text-black">
           {product.category} - {product.flavor}
         </div>
         
         {/* Dynamic Price / Add to Cart Area */}
-        <div className="relative w-full h-[40px] mt-0 overflow-hidden flex justify-center items-center">
+        <div className="relative w-full h-[57px] overflow-hidden flex justify-center items-center">
           {/* Price (slides up and fades out on hover) */}
-          <div className="absolute inset-0 flex items-center justify-center space-x-3 transition-all duration-300 transform translate-y-0 group-hover:-translate-y-full group-hover:opacity-0 pointer-events-none">
-            <div className="flex flex-col items-start justify-end">
-              <DirhamIcon size={12} className="text-[#3B3B3B] mb-1" />
-              <div className="text-[#3B3B3B] font-acme font-normal text-[13px] leading-[12.87px] tracking-normal text-center align-middle line-through">
-                {product.oldPrice.toFixed(2)}AED
-              </div>
+          <div className="absolute inset-0 flex items-center justify-start space-x-2 transition-all duration-300 transform translate-y-0 group-hover:-translate-y-full group-hover:opacity-0 pointer-events-none px-1">
+            <div className="font-hanken flex items-center font-bold text-[24px] leading-none text-[#34C759]">
+              <DirhamIcon size={18} className="mr-1.5" />
+              {product.price.toFixed(2)}
             </div>
-            <div className="flex flex-col items-start justify-end">
-              <DirhamIcon size={16} className="text-black mb-1" />
-              <div className="text-[#FF0000] font-acme font-normal text-[16px] leading-[16px] tracking-normal text-center align-middle">
-                {product.price.toFixed(2)}AED
-              </div>
+            <div className="font-hanken flex items-center line-through mt-1 font-normal text-[12px] leading-[12.87px] text-center text-[#888888]">
+              <DirhamIcon size={12} className="mr-0.5" />
+              {product.oldPrice.toFixed(2)}AED
             </div>
           </div>
 
-          {/* Add to Cart (slides up and fades in on hover) */}
-          <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 transform translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 pointer-events-auto">
-            <button className="text-black font-bold text-[13px] tracking-widest hover:underline uppercase">
-              ADD TO CART
+          {/* Buttons (slides up and fades in on hover) */}
+          <div className="absolute inset-0 flex items-center justify-center gap-[12px] transition-all duration-300 transform translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 pointer-events-auto pt-[5px] pr-[24px] pb-[12px] pl-[24px]">
+            <button 
+              className="font-hanken flex items-center justify-center transition-all hover:brightness-95 w-[83px] h-[40px] gap-[4px] px-[12px] py-[8px] rounded-[8px] border border-[#121212] bg-[#F1F1F1] font-normal text-[14px] leading-none text-[#121212]"
+              style={{ boxShadow: '0px 1px 1px 0px #0000001A, -2px 2px 3px 0px #00000017, -4px 5px 3px 0px #0000000D, -7px 8px 4px 0px #00000003, -10px 13px 5px 0px #00000000' }}
+            >
+              <span>View</span>
+              <Eye size={16} strokeWidth={1.5} />
+            </button>
+            <button className="font-hanken flex items-center justify-center transition-all hover:bg-black/90 w-[209px] h-[40px] gap-[10px] px-[12px] py-[8px] rounded-[8px] border border-[#FCCD56] bg-[#121212] font-bold text-[14px] leading-none text-[#FCCD56]">
+              Add to Cart
             </button>
           </div>
-        </div>
-      </div>
-
-      {/* Hover State Overlays */}
-      <div className="absolute inset-0 pointer-events-none z-20 flex flex-col">
-        {/* Eye icon appears on middle-left */}
-        <div className="absolute top-[45%] left-4 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="bg-white rounded-full p-3 shadow-lg pointer-events-auto hover:bg-gray-100 transition-colors">
-            <Eye size={20} className="text-black" />
-          </button>
         </div>
       </div>
     </div>
