@@ -52,21 +52,15 @@ export default function HeroCarousel() {
 
       {/* Static Overlay Content */}
       <div 
-        className="absolute inset-0 flex flex-col z-20 pointer-events-none"
+        className="absolute inset-0 flex flex-col z-20 pointer-events-none px-6 pt-[120px] pb-10 lg:pt-[160px] lg:pb-[80px] lg:px-[80px]"
         style={{
           background: 'linear-gradient(269.58deg, rgba(0, 0, 0, 0) 45.62%, #000000 97.91%)',
-          paddingLeft: '80px',
-          paddingRight: '80px',
-          paddingBottom: '80px',
-          paddingTop: '160px' // Accounting for header + gap (56px) roughly
         }}
       >
          <div 
-           className="w-full flex flex-col items-start justify-center h-full"
+           className="w-full flex flex-col items-start justify-center h-full mx-auto gap-8 lg:gap-[56px]"
            style={{
              maxWidth: '1440px',
-             margin: '0 auto',
-             gap: '56px' // Gap between main content elements if applicable
            }}
          >
            <div className="flex flex-col items-start pointer-events-auto">
@@ -87,7 +81,7 @@ export default function HeroCarousel() {
 
              {/* Heading */}
              <h1 
-               className="font-hanken mb-4 text-left font-[800] text-[64px] leading-none text-white tracking-normal"
+               className="font-hanken mb-4 text-left font-[800] text-[40px] md:text-[48px] lg:text-[64px] leading-[1.1] lg:leading-none text-white tracking-normal"
              >
                Experience<br />
                <span style={{
@@ -105,7 +99,7 @@ export default function HeroCarousel() {
 
              {/* Description */}
              <p 
-               className="font-inter mb-10 text-left font-normal text-[18px] leading-[28px] text-white/70 w-[600px] tracking-normal"
+               className="font-inter mb-8 lg:mb-10 text-left font-normal text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] text-white/70 w-full max-w-[600px] tracking-normal"
              >
                Discover luxury hookahs, authentic flavour's, and premium smoking accessories crafted for unforgettable moments of indulgence and timeless tradition.
              </p>
@@ -133,7 +127,7 @@ export default function HeroCarousel() {
              </button>
 
              {/* Stat Section */}
-             <div className="flex gap-8 mt-4 items-center">
+             <div className="flex flex-wrap gap-4 lg:gap-8 mt-4 items-center">
                 <div className="flex flex-col text-left">
                    <span className="font-hanken font-normal text-[30px] leading-[36px] text-[#D4A017]">15K+</span>
                    <span className="font-hanken font-normal text-[11px] leading-[16.5px] tracking-[2.2px] uppercase text-white/50">HAPPY CLIENTS</span>

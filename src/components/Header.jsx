@@ -88,9 +88,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Modal (Kept simple) */}
+      {/* Mobile Menu Modal */}
       <div 
-        className={`fixed inset-0 z-[100] bg-[#111] text-white flex flex-col xl:hidden h-[100dvh] overflow-hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[100] bg-[#1c1c1e] text-white flex flex-col xl:hidden h-[100dvh] overflow-hidden transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -102,12 +102,19 @@ export default function Header() {
             <X size={24} className="text-white" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto flex flex-col w-full p-6 space-y-6 text-lg font-medium tracking-wide uppercase">
-           {MOBILE_MENU_ITEMS.map((item, index) => (
-              <Link key={index} to={item.link} onClick={() => setIsMobileMenuOpen(false)} className="hover:text-[#D4A017] transition-colors border-b border-gray-800 pb-2">
-                 {item.name}
-              </Link>
-           ))}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 pt-8 sm:pt-10 overflow-x-hidden">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-8 sm:gap-y-10 gap-x-2 sm:gap-x-4">
+             {MOBILE_MENU_ITEMS.map((item, index) => (
+                <Link key={index} to={item.link} onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center group cursor-pointer gap-2 sm:gap-3">
+                   <div className="w-full max-w-[75px] sm:max-w-[100px] aspect-square rounded-full overflow-hidden border-2 border-transparent group-hover:border-[#D4A017] transition-all flex items-center justify-center bg-[#2a2a2c] shadow-lg relative">
+                     <img src={item.image} alt={item.name} className="w-[80%] h-[80%] object-contain drop-shadow-xl transition-transform duration-300 group-hover:scale-110" />
+                   </div>
+                   <span className="text-center text-[11px] sm:text-[13px] font-bold tracking-wide text-white transition-colors group-hover:text-[#D4A017] capitalize leading-tight">
+                     {item.name.toLowerCase()}
+                   </span>
+                </Link>
+             ))}
+          </div>
         </div>
       </div>
     </header>

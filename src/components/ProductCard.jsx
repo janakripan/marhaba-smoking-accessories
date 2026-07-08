@@ -83,15 +83,15 @@ export default function ProductCard({ product }) {
           </div>
 
           {/* Buttons (slides up and fades in on hover) */}
-          <div className="absolute inset-0 flex items-center justify-center gap-[12px] transition-all duration-300 transform translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 pointer-events-auto pt-[5px] pr-[24px] pb-[12px] pl-[24px]">
+          <div className="absolute inset-0 flex items-center justify-center gap-2 lg:gap-[12px] transition-all duration-300 transform translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 pointer-events-auto pt-[5px] px-2 lg:px-[24px] pb-[12px]">
             <button 
-              className="font-hanken flex items-center justify-center transition-all hover:brightness-95 w-[83px] h-[40px] gap-[4px] px-[12px] py-[8px] rounded-[8px] border border-[#121212] bg-[#F1F1F1] font-normal text-[14px] leading-none text-[#121212]"
+              className="font-hanken flex-1 lg:flex-none flex items-center justify-center transition-all hover:brightness-95 lg:w-[83px] h-[40px] gap-[4px] px-2 lg:px-[12px] py-[8px] rounded-[8px] border border-[#121212] bg-[#F1F1F1] font-normal text-[12px] lg:text-[14px] leading-none text-[#121212]"
               style={{ boxShadow: '0px 1px 1px 0px #0000001A, -2px 2px 3px 0px #00000017, -4px 5px 3px 0px #0000000D, -7px 8px 4px 0px #00000003, -10px 13px 5px 0px #00000000' }}
             >
               <span>View</span>
-              <Eye size={16} strokeWidth={1.5} />
+              <Eye className="w-[14px] h-[14px] lg:w-4 lg:h-4" strokeWidth={1.5} />
             </button>
-            <button className="font-hanken flex items-center justify-center transition-all hover:bg-black/90 w-[209px] h-[40px] gap-[10px] px-[12px] py-[8px] rounded-[8px] border border-[#FCCD56] bg-[#121212] font-bold text-[14px] leading-none text-[#FCCD56]">
+            <button className="font-hanken flex-[2] lg:flex-none flex items-center justify-center transition-all hover:bg-black/90 lg:w-[209px] h-[40px] gap-2 lg:gap-[10px] px-2 lg:px-[12px] py-[8px] rounded-[8px] border border-[#FCCD56] bg-[#121212] font-bold text-[12px] lg:text-[14px] leading-none text-[#FCCD56] whitespace-nowrap">
               Add to Cart
             </button>
           </div>

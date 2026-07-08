@@ -33,35 +33,25 @@ const LinkedinIcon = ({ size = 20 }) => (
 export default function Footer() {
   return (
     <footer 
-      className="relative w-full flex justify-center mt-auto bg-black text-white bg-cover bg-center border-t border-white/20"
-      style={{ backgroundImage: "url('/footer/footer-bg.jpg')", height: '422px' }}
+      className="relative w-full flex justify-center mt-auto bg-black text-white bg-cover bg-center border-t border-white/20 h-auto lg:h-[422px]"
+      style={{ backgroundImage: "url('/footer/footer-bg.jpg')" }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/70 z-0 pointer-events-none"></div>
 
       {/* Main Footer Container */}
       <div 
-        className="w-full flex flex-col relative z-10"
-        style={{
-          maxWidth: '1440px',
-          height: '422px',
-          paddingTop: '48px',
-          paddingBottom: '48px',
-          paddingLeft: '96px',
-          paddingRight: '96px',
-          gap: '10px'
-        }}
+        className="w-full flex flex-col relative z-10 px-6 py-10 gap-6 lg:max-w-[1440px] lg:h-[422px] lg:pt-[48px] lg:pb-[48px] lg:px-[96px] lg:gap-[10px]"
       >
         {/* Inner Container */}
-        <div className="flex flex-col w-full" style={{ maxWidth: '1248px', height: '326px', gap: '40px' }}>
+        <div className="flex flex-col w-full gap-8 lg:max-w-[1248px] lg:h-[326px] lg:gap-[40px]">
           
           {/* Inner Top Container (3 columns) */}
           <div 
-            className="flex flex-col lg:flex-row w-full justify-between items-start" 
-            style={{ maxWidth: '1248px', height: '260px', gap: '51px' }}
+            className="flex flex-col lg:flex-row w-full justify-between items-start gap-10 lg:max-w-[1248px] lg:h-[260px] lg:gap-[51px]" 
           >
             {/* Column 1: Logo & Description */}
-            <div className="flex flex-col items-start w-[280px]">
+            <div className="flex flex-col items-start w-full lg:w-[280px]">
               <div className="w-[85px] h-[85px] rounded-2xl bg-black border border-gray-800 flex flex-col items-center justify-center mb-[16px] shadow-lg">
                 <span className="font-serif text-[40px] leading-none text-[#D4A017] tracking-tighter">M</span>
                 <span className="font-serif text-[9px] leading-none text-[#D4A017] mt-1">Marhaba</span>
@@ -80,7 +70,7 @@ export default function Footer() {
             </div>
 
             {/* Column 2: Company Links */}
-            <div className="flex flex-col items-start w-[200px]">
+            <div className="flex flex-col items-start w-full lg:w-[200px]">
               <h3 
                 className="font-blinker text-white mb-[20px]"
                 style={{
@@ -113,7 +103,7 @@ export default function Footer() {
             </div>
 
             {/* Column 3: Newsletter & Socials */}
-            <div className="flex flex-col items-start flex-1 max-w-[500px]">
+            <div className="flex flex-col items-start flex-1 w-full max-w-full lg:max-w-[500px]">
               <h3 
                 className="font-blinker text-white mb-[12px]"
                 style={{
@@ -165,9 +155,9 @@ export default function Footer() {
           </div>
 
           {/* Bottom Container: Copyright & Payment Methods */}
-          <div className="flex flex-col md:flex-row justify-between items-center w-full relative">
-            {/* Divider line placed perfectly in the center of the 40px gap */}
-            <div className="absolute top-[-20px] left-0 w-full h-[1px] bg-white/20"></div>
+          <div className="flex flex-col md:flex-row justify-between items-center w-full relative pt-6 md:pt-0">
+            {/* Divider line placed perfectly in the center of the 40px gap (only on lg, handled mostly by mt) */}
+            <div className="absolute top-0 md:top-[-20px] left-0 w-full h-[1px] bg-white/20"></div>
 
             <p 
               className="font-montserrat text-white"

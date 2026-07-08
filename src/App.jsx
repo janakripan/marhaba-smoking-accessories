@@ -4,7 +4,6 @@ import SmoothScroll from '@/components/SmoothScroll';
 import Footer from '@/components/Footer';
 import AgeVerification from '@/components/AgeVerification';
 import CookieConsent from '@/components/CookieConsent';
-import FloatingContactButtons from '@/components/FloatingContactButtons';
 import Home from '@/app/page';
 
 export default function App() {
@@ -17,7 +16,6 @@ export default function App() {
           <Route path="/*" element={<Home />} />
         </Routes>
       </div>
-      <FloatingContactButtons />
       <CookieConsent />
       <Footer />
     </Fragment>

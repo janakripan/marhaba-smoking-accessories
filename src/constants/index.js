@@ -1,9 +1,9 @@
 export const MOBILE_MENU_ITEMS = [
-  { name: "NEW ARRIVALS", link: "/" },
-  { name: "ON SALE", link: "/" },
-  { name: "E-JUICE", link: "/" },
-  { name: "SNUS", link: "/" },
-  { name: "POD SYSTEM", link: "/" },
+  { name: "NEW ARRIVALS", link: "/", image: "/products image/best-sellers/16000 puffs 50mg bluberry.png" },
+  { name: "ON SALE", link: "/", image: "/products image/best-sellers/16000 puffs strawberry ice.png" },
+  { name: "E-JUICE", link: "/", image: "/products image/best-sellers/Card image.png" },
+  { name: "SNUS", link: "/", image: "/products image/marhaba t10000 puffs/bluebery.png" },
+  { name: "POD SYSTEM", link: "/", image: "/products image/marhaba-t1000 puffs 2/image 1.png" },
 ];
 
 export const HEADER_LINKS = [
