@@ -3,7 +3,7 @@ export const MOBILE_MENU_ITEMS = [
   { name: "ON SALE", link: "/", image: "/products image/best-sellers/16000 puffs strawberry ice.png" },
   { name: "E-JUICE", link: "/", image: "/products image/best-sellers/Card image.png" },
   { name: "SNUS", link: "/", image: "/products image/marhaba t10000 puffs/bluebery.png" },
-  { name: "POD SYSTEM", link: "/", image: "/products image/marhaba-t1000 puffs 2/image 1.png" },
+  { name: "POD SYSTEM", link: "/", image: "/products image/marhaba t10000 puffs/grape.png" },
 ];
 
 export const HEADER_LINKS = [

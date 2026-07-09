@@ -12,12 +12,12 @@ export default function FeaturedSection({ title, description, products }) {
 
   return (
     <section className="w-full flex flex-col py-12 bg-white">
-      <div className="w-full max-w-screen-xl mx-auto px-4 flex flex-col items-start mb-8 gap-4">
-        <h2 className="font-hanken font-[900] text-[36px] leading-[40px] text-[#0D0D0D]">
+      <div className="w-full max-w-screen-xl mx-auto px-4 flex flex-col items-start mb-8 gap-2 lg:gap-4">
+        <h2 className="font-hanken font-[900] text-[28px] md:text-[32px] lg:text-[36px] leading-tight lg:leading-[40px] text-[#0D0D0D]">
           {title}
         </h2>
         {description && (
-          <p className="font-hanken font-normal text-[32px] leading-none text-[#333333] align-middle">
+          <p className="font-hanken font-normal text-[16px] md:text-[24px] lg:text-[32px] leading-snug lg:leading-none text-[#333333] align-middle">
             {description}
           </p>
         )}

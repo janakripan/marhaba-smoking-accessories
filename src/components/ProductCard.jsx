@@ -32,19 +32,7 @@ export default function ProductCard({ product }) {
       <div className="relative w-full aspect-[4/5] z-10 bg-white flex items-center justify-center p-6">
         
         
-        {/* Top Left Puffs & Flavor */}
-        <div className="absolute top-4 left-4 flex flex-col items-start z-20">
-          <div className="flex items-end text-black font-bold text-[13px] leading-none">
-            {puffs} 
-            <span className="ml-0.5 text-[7px] uppercase font-bold leading-none mb-[1px]">
-              PUFFS
-            </span>
-          </div>
-          <div className="text-black text-[9px] font-medium capitalize mt-1 opacity-80">
-            {product.flavor.toLowerCase()}
-          </div>
-        </div>
-
+        
        
         {/* Actual Product Image */}
         <img 

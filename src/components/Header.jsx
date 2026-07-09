@@ -116,6 +116,16 @@ export default function Header() {
              ))}
           </div>
         </div>
+        
+        {/* Mobile Login / Register Footer */}
+        <div className="p-4 border-t border-gray-800 bg-[#111] flex flex-col gap-3">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-3 bg-[#D4A017] hover:bg-[#b8851c] text-white text-center font-bold text-[14px] tracking-wide rounded-[8px] transition-colors shadow-lg">
+            Sign In
+          </Link>
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-3 border border-gray-600 hover:bg-gray-800 text-white text-center font-bold text-[14px] tracking-wide rounded-[8px] transition-colors">
+            Register
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -3,6 +3,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import BrandCarousel from "@/components/BrandCarousel";
 import BannerSection from "@/components/BannerSection";
 import FeaturedSection from "@/components/FeaturedSection";
+import CategoriesSection from "@/components/CategoriesSection";
 import { T10000_PUFFS_1_DATA, T10000_PUFFS_2_DATA, T16000_PUFFS_DATA, BEST_SELLERS_DATA } from "@/constants";
 
 export default function Home() {
@@ -43,6 +44,9 @@ export default function Home() {
 
         {/* Second Banner Section */}
         <BannerSection imageSrc="/hero/banneer-2.png" altText="Banner 2" />
+
+        {/* Categories Section */}
+        <CategoriesSection />
 
         {/* T16000 PUFFS Featured Section */}
         <FeaturedSection 
