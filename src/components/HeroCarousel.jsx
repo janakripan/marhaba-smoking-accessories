@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { HERO_SLIDES as images } from "@/constants";
+import { HERO_SLIDES as images, HERO_CONTENT } from "@/constants";
 
 export default function HeroCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
@@ -76,7 +76,7 @@ export default function HeroCarousel() {
                }}
              >
                <span className="font-hanken font-medium text-[10px] md:text-[11px] tracking-[2px] md:tracking-[3px] uppercase text-[#cfcfcf]">
-                 100% GENUINE HOOKAH PRODUCTS & ACCESSORIES
+                 {HERO_CONTENT.badge}
                </span>
              </div>
 
@@ -84,15 +84,15 @@ export default function HeroCarousel() {
              <h1 
                className="font-inter mb-5 text-left font-[700] text-[40px] md:text-[56px] lg:text-[72px] leading-[1.1] text-white tracking-tight"
              >
-               Enjoy <span style={{ color: '#D4A017' }}>Marhaba</span> Premium<br />
-               Vapes &amp; Sheesha
+               {HERO_CONTENT.heading.line1}<span style={{ color: '#D4A017' }}>{HERO_CONTENT.heading.highlight}</span>{HERO_CONTENT.heading.line2}<br />
+               {HERO_CONTENT.heading.line3}
              </h1>
 
              {/* Description */}
              <p 
                className="font-inter mb-10 text-left font-normal text-[15px] lg:text-[17px] leading-[26px] text-[#b3b3b3] w-full max-w-[650px]"
              >
-               Discover luxury hookahs, authentic flavour's, and premium smoking accessories crafted for unforgettable moments of indulgence and timeless tradition.
+               {HERO_CONTENT.description}
              </p>
 
              {/* Bottom Badge (CTA Button) */}
@@ -106,7 +106,7 @@ export default function HeroCarousel() {
                }}
              >
                <span className="font-inter font-medium text-[15px] text-[#D4A017] transition-colors duration-300 group-hover:text-shadow-[#D4A017] tracking-wide">
-                 Make a Puff
+                 {HERO_CONTENT.cta}
                </span>
                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#D4A017] transition-all duration-300 group-hover:text-shadow-[#D4A017] group-hover:translate-x-1 group-hover:-translate-y-1">
                  <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -116,24 +116,17 @@ export default function HeroCarousel() {
 
              {/* Stat Section */}
              <div className="flex flex-wrap gap-6 lg:gap-10 mt-2 items-center">
-                <div className="flex flex-col text-left">
-                   <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">15K+</span>
-                   <span className="font-inter font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">HAPPY CLIENTS</span>
-                </div>
-                
-                <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.15 }}></div>
-                
-                <div className="flex flex-col text-left">
-                   <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">200+</span>
-                   <span className="font-inter font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">PREMIUM PRODUCTS</span>
-                </div>
-
-                <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.15 }}></div>
-
-                <div className="flex flex-col text-left">
-                   <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">12</span>
-                   <span className="font-inter font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">ELITE BRANDS</span>
-                </div>
+                {HERO_CONTENT.stats.map((stat, index) => (
+                  <React.Fragment key={index}>
+                    <div className="flex flex-col text-left">
+                       <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">{stat.value}</span>
+                       <span className="font-hanken font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">{stat.label}</span>
+                    </div>
+                    {index < HERO_CONTENT.stats.length - 1 && (
+                      <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.15 }}></div>
+                    )}
+                  </React.Fragment>
+                ))}
              </div>
            </div>
          </div>

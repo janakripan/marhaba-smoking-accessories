@@ -311,3 +311,93 @@ export const T16000_PUFFS_DATA = [
     specs: { nicotine: "50 MG", liquid: "6 ML", battery: "500 MAH" }
   }
 ];
+
+export const CATEGORY_SECTION_DATA = [
+  {
+    name: "New Arrivals",
+    subtitle: "Fresh drops & latest releases",
+    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "On Sale",
+    subtitle: "Premium deals & offers",
+    image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "E-Juice",
+    subtitle: "Curated liquid flavours",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "SNUS",
+    subtitle: "Smokeless & seamless",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Portioned_snus.jpg",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "Essentials",
+    subtitle: "Everything you need, always",
+    image: "https://images.unsplash.com/photo-1516239482977-b550ba7253f2?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "Shisha",
+    subtitle: "Authentic hookah experience",
+    image: "https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "Tanks",
+    subtitle: "Superior capacity & flavour",
+    image: "https://images.unsplash.com/photo-1561553873-e8491a564fd0?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "Pods & Coil",
+    subtitle: "Replacements for every device",
+    image: "https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "Pod System",
+    subtitle: "Compact, powerful, precise",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/IQOS_01.jpg",
+    link: "/",
+    count: null,
+  },
+  {
+    name: "Mods & Kits",
+    subtitle: "Advanced setups for enthusiasts",
+    image: "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=800&auto=format&fit=crop",
+    link: "/",
+    count: null,
+  },
+];
+
+export const HERO_CONTENT = {
+  badge: "100% GENUINE HOOKAH PRODUCTS & ACCESSORIES",
+  heading: {
+    line1: "Enjoy ",
+    highlight: "Marhaba",
+    line2: " Premium",
+    line3: "Vapes & Sheesha"
+  },
+  description: "Discover luxury hookahs, authentic flavour's, and premium smoking accessories crafted for unforgettable moments of indulgence and timeless tradition.",
+  cta: "Make a Puff",
+  stats: [
+    { value: "15K+", label: "Happy Customers" },
+    { value: "30+", label: "Top Brands" },
+    { value: "500+", label: "Premium Products" }
+  ]
+};
