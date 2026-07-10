@@ -26,7 +26,7 @@ export default function Home() {
         />
 
         {/* First Banner Section */}
-        <BannerSection imageSrc="/hero/banner.png" altText="Banner 1" />
+        <BannerSection imageSrc="/hero/banner-new-1.png" altText="Banner 1" />
 
         {/* Featured Section */}
         <FeaturedSection 
@@ -43,7 +43,7 @@ export default function Home() {
         />
 
         {/* Second Banner Section */}
-        <BannerSection imageSrc="/hero/banneer-2.png" altText="Banner 2" />
+        <BannerSection imageSrc="/hero/banner-new-2.png" altText="Banner 2" />
 
         {/* Categories Section */}
         <CategoriesSection />

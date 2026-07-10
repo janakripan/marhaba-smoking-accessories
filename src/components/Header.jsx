@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, Heart, ShoppingCart, User, X } from "lucide-react";
+import { ChevronDown, Heart, ShoppingBasket, CircleUser, X } from "lucide-react";
 
 import { MOBILE_MENU_ITEMS, HEADER_LINKS } from "@/constants";
 
@@ -25,66 +25,72 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent text-white pt-8 pb-4 flex justify-center transition-all duration-300">
-      <div className="max-w-[1400px] w-full px-6 md:px-12 flex justify-between items-center">
+    <header
+      className="absolute top-0 left-0 w-full z-50 text-white pt-8 pb-4 flex justify-center transition-all duration-300"
+      style={{
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        background: '#0000008C',
+        borderBottom: '1px solid #7A7A7A',
+      }}
+    >
+      <div className="max-w-[1400px] w-full px-6 md:px-12 flex justify-between items-center gap-6">
         {/* Mobile Menu Button */}
         <button 
-          className="xl:hidden p-2 -ml-2 text-white hover:text-gray-300"
+          className="xl:hidden p-2 -ml-2 text-white hover:text-[#D4A017] transition-colors"
           onClick={() => setIsMobileMenuOpen(true)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
 
-        {/* Logo */}
-        <Link to="/" className="flex-shrink-0 flex items-center justify-center">
-          {/* Placeholder for the dark circular logo with gold M if logo.jpg doesn't match */}
-          <div className="w-14 h-14 rounded-full bg-[#111] border border-gray-700 flex flex-col items-center justify-center overflow-hidden shadow-lg">
-            <span className="font-serif text-[26px] leading-none text-[#D4A017] tracking-tighter">M</span>
-            <span className="font-serif text-[6px] leading-none text-[#D4A017] mt-0.5">Marhaba</span>
-          </div>
-        </Link>
+        {/* Logo and Separator */}
+        <div className="flex items-center gap-6 xl:gap-8 flex-shrink-0">
+          <Link to="/" className="flex items-center justify-center">
+            <div className="w-[60px] h-[60px] rounded-full overflow-hidden transition-transform hover:scale-105 border border-[#D4A017]/30">
+              <img src="/logo.jpg" alt="Marhaba Logo" className="w-full h-full object-cover" />
+            </div>
+          </Link>
+          <div className="hidden xl:block w-[1px] h-[60px] bg-white/20"></div>
+        </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="font-hanken hidden xl:flex flex-wrap justify-center items-center gap-x-10 gap-y-2 flex-1 px-8 text-white font-normal text-[15px] leading-none tracking-[0.5px]">
+        <nav className="font-hanken hidden xl:flex flex-wrap items-center gap-x-2 gap-y-3 flex-1 max-w-[800px] text-white font-normal text-[11px] leading-none tracking-[0.5px]">
           {HEADER_LINKS.map((link) => (
-            <Link key={link.name} to={link.link} className="flex items-center cursor-pointer hover:text-[#D4A017] transition-colors group">
-              {link.name} <ChevronDown size={14} className="ml-1.5 opacity-70 group-hover:opacity-100" />
+            <Link key={link.name} to={link.link} className="flex items-center px-4 py-2 rounded-full border border-white/20 cursor-pointer hover:border-[#D4A017] hover:text-[#D4A017] transition-colors group bg-transparent">
+              {link.name} <ChevronDown size={12} className="ml-1.5 opacity-70 group-hover:opacity-100" />
             </Link>
           ))}
         </nav>
 
-        {/* Right Actions */}
-        <div className="font-hanken flex items-center text-white shrink-0 font-normal text-[14px] gap-4 h-[35.24px]">
-          {/* User Account */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link to="/" className="flex items-center hover:text-[#D4A017] transition-colors">
-              <User size={18} className="mr-1.5" strokeWidth={1.5} />
-              Register
-            </Link>
-            <Link to="/" className="hover:text-[#D4A017] transition-colors">
-              Sign In
+        {/* Right Actions and Separator */}
+        <div className="flex items-center shrink-0 h-[60px] gap-6 xl:gap-8">
+          <div className="hidden xl:block w-[1px] h-full bg-white/20"></div>
+          
+          <div className="flex items-center gap-4 xl:gap-5 text-white">
+            {/* Wishlist */}
+            <button className="hover:text-[#D4A017] transition-colors">
+              <Heart size={20} strokeWidth={1.5} />
+            </button>
+
+            <div className="w-[1px] h-[20px] bg-white/20 mx-1"></div>
+
+            {/* Cart */}
+            <button className="relative hover:text-[#D4A017] transition-colors flex items-center">
+              <ShoppingBasket size={20} strokeWidth={1.5} />
+              {/* Badge */}
+              <div className="absolute -top-2 -right-2 bg-white text-black text-[10px] font-bold w-[16px] h-[16px] flex items-center justify-center rounded-full">
+                1
+              </div>
+            </button>
+
+            <div className="hidden md:block w-[1px] h-[20px] bg-white/20 mx-1"></div>
+
+            {/* User Account */}
+            <Link to="/" className="hidden md:flex items-center text-[#D4A017] hover:text-white transition-colors gap-2">
+              <CircleUser size={20} strokeWidth={1.5} />
+              <span className="text-[13px] font-normal font-hanken tracking-wide">Log in</span>
             </Link>
           </div>
-
-          {/* Divider */}
-          <div style={{ width: '1px', height: '35.24px', backgroundColor: '#FFFFFF', opacity: 0.5 }}></div>
-
-          {/* Wishlist */}
-          <button className="hover:text-[#D4A017] transition-colors">
-            <Heart size={22} strokeWidth={1.5} />
-          </button>
-
-          {/* Divider */}
-          <div style={{ width: '1px', height: '35.24px', backgroundColor: '#FFFFFF', opacity: 0.5 }}></div>
-
-          {/* Cart */}
-          <button className="relative hover:text-[#D4A017] transition-colors flex items-center">
-            <ShoppingCart size={22} strokeWidth={1.5} />
-            {/* Badge */}
-            <div className="absolute -top-2 -right-2.5 bg-white text-black text-[10px] font-bold w-[18px] h-[18px] flex items-center justify-center rounded-full border-2 border-transparent">
-              0
-            </div>
-          </button>
         </div>
       </div>
 
@@ -95,8 +101,8 @@ export default function Header() {
         }`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-800 bg-[#111]">
-          <div className="w-10 h-10 rounded-full bg-black border border-gray-700 flex flex-col items-center justify-center">
-            <span className="font-serif text-[18px] leading-none text-[#D4A017]">M</span>
+          <div className="w-12 h-12 rounded-full overflow-hidden border border-[#D4A017]/30">
+            <img src="/logo.jpg" alt="Marhaba Logo" className="w-full h-full object-cover" />
           </div>
           <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
             <X size={24} className="text-white" />

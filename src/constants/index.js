@@ -7,11 +7,16 @@ export const MOBILE_MENU_ITEMS = [
 ];
 
 export const HEADER_LINKS = [
-  { name: "New Arrivals", link: "/" },
-  { name: "On sale", link: "/" },
-  { name: "E-Juice", link: "/" },
+  { name: "NEW ARRIVALS", link: "/" },
+  { name: "ON SALE", link: "/" },
+  { name: "E-JUICE", link: "/" },
   { name: "SNUS", link: "/" },
+  { name: "ESSENTIALS", link: "/" },
+  { name: "SHISHA", link: "/" },
+  { name: "TANKS", link: "/" },
+  { name: "PODS & COIL", link: "/" },
   { name: "POD SYSTEM", link: "/" },
+  { name: "MODS AND KITS", link: "/" },
 ];
 
 export const FOOTER_COMPANY_LINKS = [

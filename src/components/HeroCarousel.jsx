@@ -63,88 +63,76 @@ export default function HeroCarousel() {
              maxWidth: '1440px',
            }}
          >
-           <div className="flex flex-col items-start pointer-events-auto">
+           <div className="flex flex-col items-start pointer-events-auto mt-20">
              {/* Top Badge */}
              <div 
-               className="flex items-center justify-center rounded-full mb-6"
+               className="inline-flex items-center rounded-full mb-6"
                style={{
                  gap: '8px',
-                 padding: '8px 24px',
-                 background: '#FFFFFF0D',
-                 border: '1px solid #D4A01766',
+                 padding: '6px 20px',
+                 background: '#00000066',
+                 border: '1px solid #D4A01744',
+                 backdropFilter: 'blur(4px)'
                }}
              >
-               <span className="font-hanken font-normal text-[11px] leading-[16.5px] tracking-[2.75px] uppercase text-white">
+               <span className="font-hanken font-medium text-[10px] md:text-[11px] tracking-[2px] md:tracking-[3px] uppercase text-[#cfcfcf]">
                  100% GENUINE HOOKAH PRODUCTS & ACCESSORIES
                </span>
              </div>
 
              {/* Heading */}
              <h1 
-               className="font-hanken mb-4 text-left font-[800] text-[40px] md:text-[48px] lg:text-[64px] leading-[1.1] lg:leading-none text-white tracking-normal"
+               className="font-inter mb-5 text-left font-[700] text-[40px] md:text-[56px] lg:text-[72px] leading-[1.1] text-white tracking-tight"
              >
-               Experience<br />
-               <span style={{
-                 background: 'linear-gradient(90deg, #D4A017 0%, #F4D06F 50%, #D4A017 100%)',
-                 WebkitBackgroundClip: 'text',
-                 WebkitTextFillColor: 'transparent',
-                 backgroundClip: 'text',
-                 color: 'transparent'
-               }}>
-                 Marhaba
-               </span> Premium<br />
-               Vapes &amp; Sheesha<br />
-               Hookas
+               Enjoy <span style={{ color: '#D4A017' }}>Marhaba</span> Premium<br />
+               Vapes &amp; Sheesha
              </h1>
 
              {/* Description */}
              <p 
-               className="font-inter mb-8 lg:mb-10 text-left font-normal text-[15px] lg:text-[18px] leading-[24px] lg:leading-[28px] text-white/70 w-full max-w-[600px] tracking-normal"
+               className="font-inter mb-10 text-left font-normal text-[15px] lg:text-[17px] leading-[26px] text-[#b3b3b3] w-full max-w-[650px]"
              >
                Discover luxury hookahs, authentic flavour's, and premium smoking accessories crafted for unforgettable moments of indulgence and timeless tradition.
              </p>
 
-             {/* Bottom Badge (Button) */}
+             {/* Bottom Badge (CTA Button) */}
              <button 
-               className="flex items-center justify-center rounded-full transition-colors hover:bg-white/10 mb-[60px] cursor-pointer group"
+               className="inline-flex items-center justify-center rounded-[8px] transition-all duration-300 mb-12 cursor-pointer group hover:bg-[#D4A017] hover:shadow-[0_0_20px_rgba(212,160,23,0.4)] hover:-translate-y-1"
                style={{
-                 gap: '10.47px',
-                 padding: '16px 24px',
-                 background: '#FFFFFF0D',
-                 border: '1px solid #FFFFFF33',
-                 backdropFilter: 'blur(12px)',
-                 WebkitBackdropFilter: 'blur(12px)'
+                 gap: '12px',
+                 padding: '12px 24px',
+                 background: 'transparent',
+                 border: '1px solid #D4A017',
                }}
              >
-               <span className="font-blinker font-normal text-[14px] tracking-[2.4px] uppercase text-[#DDDDDD]">
-                 EXPLORE CATEGORIES
+               <span className="font-inter font-medium text-[15px] text-[#D4A017] transition-colors duration-300 group-hover:text-shadow-[#D4A017] tracking-wide">
+                 Make a Puff
                </span>
-               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DDDDDD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
-                 <circle cx="12" cy="12" r="10"></circle>
-                 <polyline points="12 16 16 12 12 8"></polyline>
-                 <line x1="8" y1="12" x2="16" y2="12"></line>
+               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#D4A017] transition-all duration-300 group-hover:text-shadow-[#D4A017] group-hover:translate-x-1 group-hover:-translate-y-1">
+                 <line x1="7" y1="17" x2="17" y2="7"></line>
+                 <polyline points="7 7 17 7 17 17"></polyline>
                </svg>
              </button>
 
              {/* Stat Section */}
-             <div className="flex flex-wrap gap-4 lg:gap-8 mt-4 items-center">
+             <div className="flex flex-wrap gap-6 lg:gap-10 mt-2 items-center">
                 <div className="flex flex-col text-left">
-                   <span className="font-hanken font-normal text-[30px] leading-[36px] text-[#D4A017]">15K+</span>
-                   <span className="font-hanken font-normal text-[11px] leading-[16.5px] tracking-[2.2px] uppercase text-white/50">HAPPY CLIENTS</span>
+                   <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">15K+</span>
+                   <span className="font-inter font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">HAPPY CLIENTS</span>
                 </div>
                 
-                <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.2 }}></div>
+                <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.15 }}></div>
                 
                 <div className="flex flex-col text-left">
-                   <span className="font-hanken font-normal text-[30px] leading-[36px] text-[#D4A017]">200+</span>
-                   <span className="font-hanken font-normal text-[11px] leading-[16.5px] tracking-[2.2px] uppercase text-white/50">PREMIUM PRODUCTS</span>
+                   <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">200+</span>
+                   <span className="font-inter font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">PREMIUM PRODUCTS</span>
                 </div>
 
-                <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.2 }}></div>
+                <div style={{ width: '1px', height: '40px', backgroundColor: '#FFFFFF', opacity: 0.15 }}></div>
 
                 <div className="flex flex-col text-left">
-                   <span className="font-hanken font-normal text-[30px] leading-[36px] text-[#D4A017]">12</span>
-                   <span className="font-hanken font-normal text-[11px] leading-[16.5px] tracking-[2.2px] uppercase text-white/50">ELITE BRANDS</span>
+                   <span className="font-inter font-normal text-[28px] lg:text-[34px] leading-tight text-[#D4A017] mb-1">12</span>
+                   <span className="font-inter font-normal text-[10px] lg:text-[11px] tracking-[1.5px] uppercase text-[#888888]">ELITE BRANDS</span>
                 </div>
              </div>
            </div>
