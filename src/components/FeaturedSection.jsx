@@ -1,26 +1,41 @@
 "use client";
 
-import React from "react";
+import { ArrowRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import ProductCard from "./ProductCard";
 
 export default function FeaturedSection({ title, description, products }) {
-  const [emblaRef] = useEmblaCarousel({
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     dragFree: true,
   });
 
   return (
-    <section className="w-full flex flex-col py-12 bg-white">
-      <div className="w-full max-w-screen-xl mx-auto px-4 flex flex-col items-start mb-8 gap-2 lg:gap-4">
-        <h2 className="font-hanken font-[900] text-[28px] md:text-[32px] lg:text-[36px] leading-tight lg:leading-[40px] text-[#0D0D0D]">
-          {title}
-        </h2>
-        {description && (
-          <p className="font-hanken font-normal text-[16px] md:text-[24px] lg:text-[32px] leading-snug lg:leading-none text-[#333333] align-middle">
-            {description}
-          </p>
-        )}
+    <section className="w-full flex flex-col py-12 bg-white group/section">
+      <div className="w-full max-w-screen-xl mx-auto px-4 flex justify-between items-end mb-8 gap-4">
+        <div className="flex flex-col items-start gap-2 lg:gap-4">
+          <h2 
+            className={`text-[36px] leading-[40px] tracking-normal align-middle text-[#0D0D0D] ${
+              title === "Best sellers" 
+                ? "font-playfair font-bold" 
+                : "font-hanken font-[900]"
+            }`}
+          >
+            {title}
+          </h2>
+          {description && (
+            <p className="font-hanken font-normal text-[16px] md:text-[24px] lg:text-[32px] leading-snug lg:leading-none text-[#333333] align-middle">
+              {description}
+            </p>
+          )}
+        </div>
+        <button 
+          onClick={() => emblaApi && emblaApi.scrollNext()}
+          className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 shrink-0 shadow-sm opacity-0 group-hover/section:opacity-100 transition-all duration-300 pointer-events-none group-hover/section:pointer-events-auto"
+          aria-label="Scroll next"
+        >
+          <ArrowRight size={20} className="text-black" />
+        </button>
       </div>
 
       <div className="w-full max-w-screen-xl mx-auto px-4">

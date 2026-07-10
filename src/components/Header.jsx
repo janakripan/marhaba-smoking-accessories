@@ -79,8 +79,11 @@ export default function Header() {
         {/* Logo and Separator */}
         <div className="flex items-center gap-6 xl:gap-8 flex-shrink-0">
           <Link to="/" className="flex items-center justify-center">
-            <div className="w-[60px] h-[60px] rounded-full overflow-hidden transition-transform hover:scale-105 border border-[#D4A017]/30">
-              <img src="/logo.jpg" alt="Marhaba Logo" className="w-full h-full object-cover" />
+            <div 
+              className="w-[75px] h-[75px] xl:w-[90px] xl:h-[90px] rounded-full overflow-hidden transition-transform hover:scale-105 flex-shrink-0 shadow-lg bg-black flex items-center justify-center p-1"
+              style={{ border: '1px solid #E0B238' }}
+            >
+              <img src="/logo.jpg" alt="Marhaba Logo" className="w-full h-full object-contain rounded-full" />
             </div>
           </Link>
           <div className={`hidden xl:block w-[1px] h-[60px] transition-colors duration-300 ${isScrolledPastHero ? 'bg-black/10' : 'bg-white/20'}`}></div>

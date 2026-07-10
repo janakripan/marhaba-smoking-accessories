@@ -29,10 +29,50 @@ export const FOOTER_COMPANY_LINKS = [
 ];
 
 export const HERO_SLIDES = [
-  "/hero/hero.jpg",
-  "/hero/hero.jpg",
-  "/hero/hero.jpg",
-  "/hero/hero.jpg",
+  {
+    image: "/hero/hero.jpg",
+    badge: "100% GENUINE HOOKAH PRODUCTS & ACCESSORIES",
+    heading: {
+      line1: "Discover Premium\n",
+      highlight: "Disposable ",
+      line2: "Vapes"
+    },
+    description: "Enjoy rich flavors, sleek designs, and long-lasting performance from the world's leading disposable vape brands.",
+    cta: "Shop Vapes"
+  },
+  {
+    image: "/hero/hero-2.jpg",
+    badge: "100% GENUINE HOOKAH PRODUCTS & ACCESSORIES",
+    heading: {
+      line1: "Authentic ",
+      highlight: "Flavours,\n",
+      line2: "Unforgettable Sessions"
+    },
+    description: "Explore a curated collection of premium shisha flavors crafted to deliver smooth smoke and exceptional taste every time.",
+    cta: "Explore Flavours"
+  },
+  {
+    image: "/hero/hero-3.jpg",
+    badge: "100% GENUINE HOOKAH PRODUCTS & ACCESSORIES",
+    heading: {
+      line1: "Find Your ",
+      highlight: "Signature ",
+      line2: "Vape\nFlavour"
+    },
+    description: "Choose from fruity, icy, dessert, and classic blends made with premium ingredients for a smooth and satisfying vape.",
+    cta: "Shop E-Liquids"
+  },
+  {
+    image: "/hero/hero-4.jpg",
+    badge: "100% GENUINE HOOKAH PRODUCTS & ACCESSORIES",
+    heading: {
+      line1: "Luxury Begins with\n",
+      highlight: "Marhaba",
+      line2: ""
+    },
+    description: "Discover luxury hookahs, premium accessories, and everything you need to create the perfect smoking session.",
+    cta: "Explore Collection"
+  }
 ];
 
 export const POPULAR_BRANDS = [
@@ -315,89 +355,59 @@ export const T16000_PUFFS_DATA = [
 export const CATEGORY_SECTION_DATA = [
   {
     name: "New Arrivals",
-    subtitle: "Fresh drops & latest releases",
     image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
     link: "/",
-    count: null,
   },
   {
     name: "On Sale",
-    subtitle: "Premium deals & offers",
     image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=800&auto=format&fit=crop",
     link: "/",
-    count: null,
   },
   {
     name: "E-Juice",
-    subtitle: "Curated liquid flavours",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop",
+    image: "https://www.vapevilla.in/cdn/shop/collections/vape_liquid.webp?v=1711185990",
     link: "/",
-    count: null,
   },
+
   {
     name: "SNUS",
-    subtitle: "Smokeless & seamless",
     image: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Portioned_snus.jpg",
     link: "/",
-    count: null,
-  },
-  {
-    name: "Essentials",
-    subtitle: "Everything you need, always",
-    image: "https://images.unsplash.com/photo-1516239482977-b550ba7253f2?q=80&w=800&auto=format&fit=crop",
-    link: "/",
-    count: null,
-  },
-  {
-    name: "Shisha",
-    subtitle: "Authentic hookah experience",
-    image: "https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=800&auto=format&fit=crop",
-    link: "/",
-    count: null,
-  },
-  {
-    name: "Tanks",
-    subtitle: "Superior capacity & flavour",
-    image: "https://images.unsplash.com/photo-1561553873-e8491a564fd0?q=80&w=800&auto=format&fit=crop",
-    link: "/",
-    count: null,
-  },
-  {
-    name: "Pods & Coil",
-    subtitle: "Replacements for every device",
-    image: "https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?q=80&w=800&auto=format&fit=crop",
-    link: "/",
-    count: null,
   },
   {
     name: "Pod System",
-    subtitle: "Compact, powerful, precise",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/IQOS_01.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaxUCNlPcMrTEgbyjR7IB09MHwHESQGavQxyhRkFPPkA&s=10",
     link: "/",
-    count: null,
   },
   {
     name: "Mods & Kits",
-    subtitle: "Advanced setups for enthusiasts",
-    image: "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=800&auto=format&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3EST3JqkyvfF3c79Wukl4VYycDHrRlSEDso1gBWBqTg&s=10",
     link: "/",
-    count: null,
+  },
+  {
+    name: "Tanks",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNLS2rpts1q1_D3ifPpOd2LkotAnQPbC88tRxCfCsiKg&s=10",
+    link: "/",
+  },
+  {
+    name: "Pods & Coils",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW9n2B4zRt6KNT6-DO_VWsSnkhsHca3nIk0gMIr1Qx_w&s=10",
+    link: "/",
+  },
+  {
+    name: "Essentials",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn6un5t7n-OeVhZItQ2ZknaVtGf3YQwN_MmGPlQy31_Q&s",
+    link: "/",
+  },
+  {
+    name: "Shisha",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTpbnjGXHHnl9QAt6xknwSRv5u9kzLNlJ58Q6N8BoAvw&s",
+    link: "/",
   },
 ];
 
-export const HERO_CONTENT = {
-  badge: "100% GENUINE HOOKAH PRODUCTS & ACCESSORIES",
-  heading: {
-    line1: "Enjoy ",
-    highlight: "Marhaba",
-    line2: " Premium",
-    line3: "Vapes & Sheesha"
-  },
-  description: "Discover luxury hookahs, authentic flavour's, and premium smoking accessories crafted for unforgettable moments of indulgence and timeless tradition.",
-  cta: "Make a Puff",
-  stats: [
-    { value: "15K+", label: "Happy Customers" },
-    { value: "30+", label: "Top Brands" },
-    { value: "500+", label: "Premium Products" }
-  ]
-};
+export const HERO_STATS = [
+  { value: "15K+", label: "Happy Clients" },
+  { value: "200+", label: "Premium Products" },
+  { value: "12", label: "Elite Brands" }
+];
