@@ -8,6 +8,37 @@ import { MOBILE_MENU_ITEMS, HEADER_LINKS } from "@/constants";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
+
+  // Handle smart scroll behavior and theme toggling
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Theme toggling (past 1/3 of viewport height)
+      if (currentScrollY > window.innerHeight / 3) {
+        setIsScrolledPastHero(true);
+      } else {
+        setIsScrolledPastHero(false);
+      }
+      
+      // Show header if scrolling up or at the top
+      if (currentScrollY < lastScrollY || currentScrollY < 50) {
+        setIsVisible(true);
+      } 
+      // Hide header if scrolling down and past the threshold
+      else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -26,18 +57,20 @@ export default function Header() {
 
   return (
     <header
-      className="absolute top-0 left-0 w-full z-50 text-white pt-8 pb-4 flex justify-center transition-all duration-300"
+      className={`fixed top-0 left-0 w-full z-50 pt-8 pb-4 flex justify-center transition-all duration-300 ease-in-out ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${isScrolledPastHero ? 'text-black shadow-sm' : 'text-white'}`}
       style={{
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        background: '#0000008C',
-        borderBottom: '1px solid #7A7A7A',
+        backdropFilter: isScrolledPastHero ? 'none' : 'blur(12px)',
+        WebkitBackdropFilter: isScrolledPastHero ? 'none' : 'blur(12px)',
+        background: isScrolledPastHero ? '#FFFFFF' : '#0000008C',
+        borderBottom: isScrolledPastHero ? '1px solid #EAEAEA' : '1px solid #7A7A7A',
       }}
     >
       <div className="max-w-[1400px] w-full px-6 md:px-12 flex justify-between items-center gap-6">
         {/* Mobile Menu Button */}
         <button 
-          className="xl:hidden p-2 -ml-2 text-white hover:text-[#D4A017] transition-colors"
+          className={`xl:hidden p-2 -ml-2 hover:text-[#D4A017] transition-colors ${isScrolledPastHero ? 'text-black' : 'text-white'}`}
           onClick={() => setIsMobileMenuOpen(true)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -50,13 +83,17 @@ export default function Header() {
               <img src="/logo.jpg" alt="Marhaba Logo" className="w-full h-full object-cover" />
             </div>
           </Link>
-          <div className="hidden xl:block w-[1px] h-[60px] bg-white/20"></div>
+          <div className={`hidden xl:block w-[1px] h-[60px] transition-colors duration-300 ${isScrolledPastHero ? 'bg-black/10' : 'bg-white/20'}`}></div>
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="font-hanken hidden xl:flex flex-wrap items-center gap-x-2 gap-y-3 flex-1 max-w-[800px] text-white font-normal text-[11px] leading-none tracking-[0.5px]">
+        <nav className="font-hanken hidden xl:flex flex-wrap items-center gap-x-2 gap-y-3 flex-1 max-w-[800px] font-normal text-[11px] leading-none tracking-[0.5px]">
           {HEADER_LINKS.map((link) => (
-            <Link key={link.name} to={link.link} className="flex items-center px-4 py-2 rounded-full border border-white/20 cursor-pointer hover:border-[#D4A017] hover:text-[#D4A017] transition-colors group bg-transparent">
+            <Link 
+              key={link.name} 
+              to={link.link} 
+              className={`flex items-center px-4 py-2 rounded-full border cursor-pointer hover:border-[#D4A017] hover:text-[#D4A017] transition-colors group bg-transparent ${isScrolledPastHero ? 'border-black/10' : 'border-white/20'}`}
+            >
               {link.name} <ChevronDown size={12} className="ml-1.5 opacity-70 group-hover:opacity-100" />
             </Link>
           ))}
@@ -64,15 +101,15 @@ export default function Header() {
 
         {/* Right Actions and Separator */}
         <div className="flex items-center shrink-0 h-[60px] gap-6 xl:gap-8">
-          <div className="hidden xl:block w-[1px] h-full bg-white/20"></div>
+          <div className={`hidden xl:block w-[1px] h-full transition-colors duration-300 ${isScrolledPastHero ? 'bg-black/10' : 'bg-white/20'}`}></div>
           
-          <div className="flex items-center gap-4 xl:gap-5 text-white">
+          <div className="flex items-center gap-4 xl:gap-5">
             {/* Wishlist */}
             <button className="hover:text-[#D4A017] transition-colors">
               <Heart size={20} strokeWidth={1.5} />
             </button>
 
-            <div className="w-[1px] h-[20px] bg-white/20 mx-1"></div>
+            <div className={`w-[1px] h-[20px] mx-1 transition-colors duration-300 ${isScrolledPastHero ? 'bg-black/10' : 'bg-white/20'}`}></div>
 
             {/* Cart */}
             <button className="relative hover:text-[#D4A017] transition-colors flex items-center">
